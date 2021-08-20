@@ -1,0 +1,45 @@
+name: Github Action Rollback Demo
+
+on:
+  issue_comment:
+    types: [created, edited]
+
+jobs:
+  revert-commit:
+
+    runs-on: ubuntu-latest
+
+    if: contains(github.event.comment.body, '/revert')
+
+    steps:
+      - name: Checkout latest code
+        uses: actions/checkout@v2
+      - name: Automatic Revert
+        uses: srt32/revert@v0.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+
+# name: Github Action Rollback - Demo
+
+# on:
+#   issue_comment:
+#   workflow_dispatch:
+# jobs:
+#   pr_commented:
+#     # This job only runs for pull request comments
+#     name: PR comment
+#     if: ${{ github.event.issue.pull_request }}
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: |
+#           echo "Comment on PR #${{ github.event.issue.number }}"
+
+#   issue_commented:
+#     # This job only runs for issue comments
+#     name: Issue comment
+#     if: ${{ !github.event.issue.pull_request }}
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: |
+#           echo "Comment on issue #${{ github.event.issue.number }}"

@@ -51,21 +51,3 @@ Series of action is called actions which makes the workflow.
 Please go through the workflows located `.github/workflows/`
 
 Note - The workflow files location is always `.github/workflows/`
-
-Important URLs
-
-List of triggers:
-https://docs.github.com/en/actions/reference/events-that-trigger-workflows
-
-Github Action Market Place:
-https://github.com/marketplace?category=publishing&type=actions&query=AWS+
-
-Creating GH actions
-https://docs.github.com/en/actions/creating-actions/publishing-actions-in-github-marketplace
-
-Self hosted runners
-https://docs.github.com/en/actions/hosting-your-own-runners
-
-
-Auto Completion:
-https://github.blog/2019-10-01-new-workflow-editor-for-github-actions/
